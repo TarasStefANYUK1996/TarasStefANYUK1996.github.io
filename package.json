@@ -1,7 +1,7 @@
 {
   "name": "new",
   "version": "0.1.0",
-  "homepage": "https://TarasStefANYUK1996.github.io/TarasStefANYUK1996.github.io/",
+  "homepage": "TarasStefANYUK1996/TarasStefANYUK1996.github.io",
   "private": true,
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
