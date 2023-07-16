@@ -1,0 +1,47 @@
+.header__burger {
+  display: none;
+  position: relative;
+  width: 2.5rem;
+  height: 1.8rem;
+  cursor: pointer;
+  z-index: 5;
+  background-color: transparent;
+  border: none;
+}
+.header__burger span {
+  top: calc(50% - 0.125rem);
+}
+.header__burger::before {
+  top: 0;
+}
+.header__burger::after {
+  bottom: 0;
+}
+.header__burger span,
+.header__burger::after,
+.header__burger::before {
+  content: "";
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  background-color: var(--main-color);
+}
+nav._active .header__burger span {
+  display: none;
+}
+nav._active .header__burger::before {
+  top: calc(50% - 0.125rem);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+nav._active .header__burger::after {
+  bottom: calc(50% - 0.125rem);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
