@@ -1,7 +1,12 @@
 :root {
   --main-color: #333;
 }
-.wrapper {
+/* .wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 135px;
+} */
+.container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 135px;
@@ -15,7 +20,9 @@
 .header__logo a {
   display: block;
   max-width: 68px;
+  filter: brightness(0.1);
 }
+
 .nav {
   flex-grow: 1;
   flex-basis: 0;
@@ -50,6 +57,7 @@
 /* gallery */
 .gallery {
   display: flex;
+  overflow: hidden;
 }
 .gallery__text {
   display: flex;
@@ -63,7 +71,7 @@
   font-size: 64px;
   font-style: normal;
   font-weight: 300;
-  line-height: 64px;
+  /* line-height: 64px; */
 }
 .gallery__name {
   color: var(--main-color);
@@ -92,9 +100,23 @@
   transition: ease 0.3s;
   text-transform: uppercase;
 }
-.gallery__link:hover {
+.gallery__link:hover,
+.about__link:hover {
   color: #fff;
   background: var(--main-color);
+}
+.about__link {
+  color: var(--main-color);
+  font-family: "TT Hoves";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  width: fit-content;
+  padding: 29px 50px;
+  background-color: #fff;
+  transition: ease 0.3s;
+  text-transform: uppercase;
+  display: inline-block;
 }
 .arrow {
   display: flex;
@@ -126,7 +148,340 @@
 .arrow *:hover {
   cursor: pointer;
 }
+/* .header {
+  position: relative;
+} */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 15px;
+  left: 0;
+}
+.about {
+  margin-top: 120px;
+  background: #fbfbfb;
+
+  display: flex;
+  padding: 0 70px 0 100px;
+}
+.about__img {
+  min-width: 50%;
+  display: flex;
+  gap: 20px;
+}
+.about__text {
+  padding: 30px 0 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.img-l {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  top: 30px;
+}
+.img-r {
+  position: relative;
+  top: 60px;
+}
+.img-l img {
+  object-fit: cover; /* Встановлюємо, щоб зображення збільшувалося або зменшувалося, щоб заповнити контейнер */
+}
+.about__title {
+  font-size: 64px;
+  font-weight: 300;
+  color: #bdbdbd;
+}
+.about__desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+}
+.mission {
+  margin-top: 120px;
+}
+
+.section__title {
+  color: #bdbdbd;
+  font-family: "TT Hoves";
+  font-size: 64px;
+  margin-bottom: 60px;
+  font-weight: 300;
+}
+.mission__list {
+  display: flex;
+}
+.mission__item {
+  display: flex;
+  flex: 1 0 50%; /* Задаємо зростання для гнучкості і ширину 50% */
+
+  gap: 30px;
+}
+
+.item__number {
+  color: #f2f2f2;
+  font-family: "SF Pro Display";
+  font-size: 200px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 0.7;
+}
+.item__text {
+  color: #333;
+  font-family: "TT Hoves";
+  font-size: 22px;
+}
+.text-max-w {
+  max-width: 279px; /* Встановлюємо максимальну ширину 50% для першого <p> елемента */
+}
+
+.project {
+  margin-top: 120px;
+}
+.project__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.row {
+  display: flex;
+  gap: 30px; /* Відступ між проектами */
+}
+
+.project-item {
+  position: relative;
+  width: auto; /* Регулюйте розмір картинок проектів за потребою */
+  max-height: 255px;
+}
+
+.project-item img {
+  width: 100%;
+  background-size: cover;
+}
+
+.project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff; /* Колір тексту для інформації проектів */
+  padding: 48px 78px;
+
+  opacity: 0; /* Приховуємо початково інформацію проектів */
+  transition: opacity 0.3s ease-in-out; /* Додамо плавний перехід для ефекту появи */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-link {
+  color: #fff;
+  font-family: Gothic A1;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+.project-title {
+  color: #fff;
+  font-family: TT Hoves;
+  font-size: calc(16px + 46 * (100vw / 1440));
+
+  white-space: wrap;
+  font-weight: 700;
+  /* line-height: 64px; */
+}
+.project-item:hover .project-info {
+  opacity: 1;
+  background-color: rgba(51, 51, 51, 0.8);
+  /* При наведенні миші показуємо інформацію проектів */
+}
+
+.comunication__content {
+  display: flex;
+  gap: 30px;
+}
+.comunication__form {
+  width: 59%;
+  max-width: 391px;
+}
+.comunication {
+  margin-top: 120px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-group input,
+.form-group textarea {
+  background: #f3f3f3;
+  border: none;
+  padding: 15px 20px;
+  outline: none;
+  width: 100%;
+}
+.form-group input:focus {
+  border: none;
+}
+.comunication__btn {
+  color: #fff;
+  background: #333;
+  border: 1px solid transparent;
+  padding: 30px 47px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  max-width: 222px;
+}
+.comunication__btn:hover {
+  cursor: pointer;
+  color: #333;
+  background: #fff;
+  border: 1px solid #333;
+}
+.form-group {
+  width: 100%;
+}
+.comunication__img {
+  width: 100%;
+  max-width: 749px;
+  height: 100%;
+  display: flex; /* Якщо контейнер має інші елементи, щоб вирівняти їх у вертикальному центрі */
+  align-items: center; /* Вирівнювання по вертикалі */
+  justify-content: center;
+}
+.comunication__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.checkbox-gr {
+  display: flex;
+  gap: 16px;
+}
+.footer {
+  padding: 58px 116px;
+  margin-top: 120px;
+  display: flex;
+  background: #2c2c2c;
+  color: #fff;
+}
+.footer__navItem a,
+.contact__list a {
+  color: #fff;
+  display: flex;
+}
+.contact__icon {
+  margin-right: 14px;
+  width: 16px;
+}
+.footer__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer__logo {
+  max-width: 145px;
+}
+.contact__item {
+  display: flex;
+}
+.footer__col {
+  width: 25%;
+  max-width: 344px;
+}
+.footer__logo img {
+  max-width: 145px;
+}
+.social__icons {
+  display: flex;
+  justify-content: space-between;
+}
+.footer a {
+  transition: ease 0.3s;
+}
+.header__logo img {
+  /* Тут ми встановлюємо колір патерну */
+  fill: blue;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
 @media screen and (max-width: 768px) {
+  .lock {
+    overflow: hidden;
+  }
+  .comunication__form {
+    width: 100%;
+  }
+  .comunication__content {
+    flex-direction: column;
+  }
+  .about__title {
+    font-size: 50px;
+  }
+  .project-title {
+    font-size: calc(16px + (46 + 46 * 0.7) * ((100vw - 320px) / 1440));
+  }
+  .project-info {
+    padding: 10px;
+  }
+  .row {
+    gap: 10px;
+  }
+  .project__list {
+    gap: 10px;
+  }
+  .header {
+    position: relative;
+    width: 100%;
+  }
+  .header__top {
+    position: fixed;
+    left: 0;
+    background: #fff;
+    max-width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 15px 0;
+  }
+  .gallery__text {
+    grid-gap: 15px;
+
+    align-items: center;
+  }
+  .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery__title {
+    font-size: 30px;
+  }
   .nav {
     flex-grow: 0;
   }
@@ -134,8 +489,9 @@
     justify-content: space-between;
     gap: 200px;
   }
-  .wrapper {
-    padding: 0 10px;
+
+  .container {
+    padding: 10px;
   }
   .header__burger {
     display: block;
@@ -143,7 +499,7 @@
   .menu {
     display: block;
   }
-  nav .list {
+  .header .list {
     transition: left ease 0.3s;
     position: absolute;
     left: 0;
@@ -155,11 +511,56 @@
     align-items: center;
     gap: 40px;
   }
-  nav._active .list {
+  .header .list {
     left: -500%;
+    background: #fff;
+    z-index: 1;
+    position: fixed;
+  }
+  .header._active .list {
+    left: 0;
   }
   .list__link {
     font-size: 35px;
     line-height: 40px;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .mission__list {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .item__text {
+    font-size: 18px;
+  }
+  .footer__logo,
+  .footer__navWr {
+    display: none;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 50px;
+    padding: 10px;
+  }
+  .footer__col {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  /* .wrapper {
+    padding: 0 15px;
+  } */
+  .container {
+    padding: 10px;
+  }
+  .header {
+    gap: 0px;
+  }
+  .gallery__title {
+    font-size: 40px;
+  }
+  .about {
+    padding: 0 10px;
   }
 }

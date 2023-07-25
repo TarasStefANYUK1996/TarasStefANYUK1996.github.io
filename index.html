@@ -13,16 +13,21 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
-        <div class="header__logo left-container">
-          <a href="#">
-            <img src="img/logo.svg" alt="logo" />
-          </a>
-        </div>
-        <nav class="nav" id="nav" onclick="toggleMenu()">
-          <button class="header__burger">
+      <header class="header container">
+        <!-- Логотип -->
+        <div class="header__top left-container">
+          <div class="header__logo">
+            <a href="#">
+              <img src="img/logo.svg" alt="logo" />
+            </a>
+          </div>
+          <button onclick="toggleMenu()" class="header__burger">
             <span></span>
           </button>
+        </div>
+
+        <!-- кнопка бургер -->
+        <nav class="nav" id="nav">
           <ul class="list" id="menu">
             <li class="list__item">
               <a class="list__link" href="#">Главная</a>
@@ -42,7 +47,7 @@
           </ul>
         </nav>
       </header>
-      <section class="gallery">
+      <section class="gallery container">
         <div class="gallery__text left-container">
           <div class="title-wrap">
             <h1 class="gallery__title">PROJECT</h1>
@@ -70,6 +75,245 @@
           </div>
         </div>
       </section>
+      <section class="about container">
+        <div class="about__img">
+          <div class="img-l">
+            <div><img src="img/about/Rectangle 8.png" alt="about-img" /></div>
+
+            <div><img src="img/about/Rectangle 10.png" alt="about-img" /></div>
+          </div>
+          <div class="img-r">
+            <img src="img/about/Rectangle 9.png" alt="about-img" />
+          </div>
+        </div>
+        <div class="about__text">
+          <h1 class="about__title">О компании</h1>
+          <p class="about__desc">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+          <a href="#" class="about__link">Читать &#129046;</a>
+        </div>
+      </section>
+      <section class="mission container">
+        <h2 class="section__title">Основные задачи</h2>
+        <ul class="mission__list">
+          <li class="mission__item">
+            <div class="item__number">1</div>
+            <div class="item__text text-max-w">
+              Создание комфортных условий и повышение качества обслуживания
+              клиентов
+            </div>
+          </li>
+          <li class="mission__item">
+            <div class="item__number">2</div>
+
+            <div class="item__text">
+              Постоянно совершенствовать качество предоставляемых услуг путем
+              обучения персонала, закупки нового оборудования и усиленной
+              рекламы на рынке
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="project container">
+        <h2 class="section__title">Наши проекты</h2>
+        <div class="project__list">
+          <div class="row">
+            <div class="project-item">
+              <img src="img/project/Rectangle 12.png" alt="Project 5" />
+
+              <div class="project-info">
+                <div class="info-wr">
+                  <p class="project-title">ДОСУГОВЫЙ ЦЕНТР</p>
+                  <a href="#" class="project-link">ПОДРОБНЕЕ &#129046;</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-item">
+              <img src="img/project/image 15.png" alt="Project 1" />
+
+              <div class="project-info">
+                <div class="info-wr">
+                  <p class="project-title">проект 2</p>
+                  <a href="#" class="project-link">ПОДРОБНЕЕ &#129046;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="project-item">
+              <img src="img/project/image 16.png" alt="Project 2" />
+              <div class="project-info">
+                <div class="info-wr">
+                  <p class="project-title">проект 3</p>
+                  <a href="#" class="project-link">ПОДРОБНЕЕ &#129046;</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-item">
+              <img src="img/project/image 17.png" alt="Project 3" />
+              <div class="project-info">
+                <div class="info-wr">
+                  <p class="project-title">проект 4</p>
+                  <a href="#" class="project-link">ПОДРОБНЕЕ &#129046;</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-item">
+              <img src="img/project/image 18.png" alt="Project 4" />
+              <div class="project-info">
+                <div class="info-wr">
+                  <p class="project-title">проект 5</p>
+                  <a href="#" class="project-link">ПОДРОБНЕЕ &#129046;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="comunication container">
+        <h2 class="section__title">Связаться с нами</h2>
+        <div class="comunication__content">
+          <div class="comunication__form">
+            <form class="form">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Имя"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Номер телефона*"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail*"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="product"
+                  name="product"
+                  placeholder="Интересующий товар/услуга"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Сообщение*"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="checkbox-gr">
+                <input
+                  type="checkbox"
+                  id="confirmation"
+                  name="confirmation"
+                  required
+                />
+                <label for="confirmation"
+                  >Отправляя заявку Вы соглашаетесь с политикой
+                  конфиденциальности</label
+                >
+              </div>
+              <button class="comunication__btn" type="submit">
+                Отправить &#129046;
+              </button>
+            </form>
+          </div>
+
+          <div class="comunication__img">
+            <img src="img/contact.png" alt="contact" />
+          </div>
+        </div>
+      </section>
+      <footer class="footer container">
+        <div class="footer__logo footer__col">
+          <a href="#"> <img src="img/logo.svg" alt="footer__logo" /></a>
+        </div>
+        <div class="footer__navWr footer__col">
+          <h3 class="footer__title">Информация</h3>
+          <ul class="footer__nav">
+            <li class="footer__navItem"><a href="#">Главная</a></li>
+            <li class="footer__navItem"><a href="#">Галерея</a></li>
+            <li class="footer__navItem"><a href="#">Проекты</a></li>
+            <li class="footer__navItem"><a href="#">Сертификаты</a></li>
+            <li class="footer__navItem"><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact footer__col">
+          <h3 class="footer__title">Контакты</h3>
+          <div class="contact__list">
+            <div class="contact__item">
+              <a href="#">
+                <div class="contact__icon">
+                  <img src="img/footer-svg/city.svg" alt="city" />
+                </div>
+                <p class="city__text">
+                  100000, Республика Казахстан, г. Караганда, ул. Телевизионная
+                  10
+                </p>
+              </a>
+            </div>
+            <div class="contact__item">
+              <a href="tel:+38 (000) 000 00 00">
+                <div class="contact__icon">
+                  <img src="img/footer-svg/tel.svg" alt="tel" />
+                </div>
+                +38 (000) 000 00 00</a
+              >
+            </div>
+            <div class="contact__item">
+              <a href="mailto:mail@gmail.com">
+                <div class="contact__icon">
+                  <img src="img/footer-svg/email.svg" alt="email" />
+                </div>
+                mail@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__social footer__col">
+          <h3 class="footer__title">Социальные сети</h3>
+          <div class="social__icons">
+            <a href="#" class="socialItem">
+              <img src="img/footer-svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="#" class="socialItem">
+              <img src="img/footer-svg/twitter.svg" alt="twitter" />
+            </a>
+            <a href="#" class="socialItem">
+              <img src="img/footer-svg/Linked.svg" alt="Linked" />
+            </a>
+            <a href="#" class="socialItem">
+              <img src="img/footer-svg/pininterest.svg" alt="pininterest" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

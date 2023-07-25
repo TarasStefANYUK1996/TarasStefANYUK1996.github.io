@@ -1,6 +1,7 @@
 function toggleMenu() {
-  const btn = document.querySelector(".nav");
+  const btn = document.querySelector(".header");
   btn.classList.toggle("_active");
+  $("body").toggleClass("lock");
 }
 $(document).ready(function () {
   let $currentSlide = $(".current-slide");
@@ -38,13 +39,11 @@ $(document).ready(function () {
   );
 
   $(".gallery__img").slick({
-    autoplay: false, // Автоматичне прокручування слайдів
-    autoplaySpeed: 2000, // Інтервал прокручування (мілісекунди)
-    dots: false, // Показувати крапки-індикатори
-    prevArrow: $(".arrow__left"), // Підключення власної кнопки "Previous"
+    autoplay: false,
+    autoplaySpeed: 2000,
+    dots: false,
+    prevArrow: $(".arrow__left"),
     nextArrow: $(".arrow__right"),
     infinite: false,
-
-    // Додайте інші параметри за потребою
   });
 });

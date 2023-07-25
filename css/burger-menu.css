@@ -8,6 +8,9 @@
   background-color: transparent;
   border: none;
 }
+.header__top {
+  z-index: 2;
+}
 .header__burger span {
   top: calc(50% - 0.125rem);
 }
@@ -30,16 +33,16 @@
   height: 0.25rem;
   background-color: var(--main-color);
 }
-nav._active .header__burger span {
+.header._active .header__burger span {
   display: none;
 }
-nav._active .header__burger::before {
+.header._active .header__burger::before {
   top: calc(50% - 0.125rem);
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-nav._active .header__burger::after {
+.header._active .header__burger::after {
   bottom: calc(50% - 0.125rem);
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
