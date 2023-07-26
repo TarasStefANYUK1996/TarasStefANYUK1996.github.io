@@ -3,6 +3,26 @@ function toggleMenu() {
   btn.classList.toggle("_active");
   $("body").toggleClass("lock");
 }
+
+$(document).ready(function () {
+  $('a[href^="#"]').bind("click", function (e) {
+    let anchor = $(this);
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: $(anchor.attr("href")).offset().top - 100,
+        },
+        800
+      );
+    const btn = document.querySelector(".header");
+    btn.classList.remove("_active");
+
+    $("body").removeClass("lock");
+    e.preventDefault();
+  });
+  return false;
+});
 $(document).ready(function () {
   let $currentSlide = $(".current-slide");
   let $totalSlides = $(".total-slides");

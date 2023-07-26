@@ -1,11 +1,15 @@
 :root {
   --main-color: #333;
 }
-/* .wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 135px;
-} */
+body {
+  font-family: "TT Hoves", sans-serif;
+}
+.slick-arrow {
+  transition: all 0.3s;
+}
+.slick-arrow:hover {
+  transform: scale(1.1);
+}
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -343,6 +347,10 @@
   box-sizing: border-box;
   transition: 0.3s;
   max-width: 222px;
+  margin-top: 21px;
+}
+.socialItem:hover {
+  transform: scale(1.2);
 }
 .comunication__btn:hover {
   cursor: pointer;
@@ -369,6 +377,7 @@
 .checkbox-gr {
   display: flex;
   gap: 16px;
+  margin: 22px 0;
 }
 .footer {
   padding: 58px 116px;
@@ -535,7 +544,8 @@
     font-size: 18px;
   }
   .footer__logo,
-  .footer__navWr {
+  .footer__navWr,
+  .footer__contact {
     display: none;
   }
   .footer {

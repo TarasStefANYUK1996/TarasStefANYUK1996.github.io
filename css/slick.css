@@ -50,22 +50,17 @@
   left: 0;
 
   display: block;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
-/* .slick-track:before,
-.slick-track:after {
-  display: table;
 
-  content: "";
-}
-.slick-track:after {
-  clear: both;
-} */
 .slick-loading .slick-track {
   visibility: hidden;
 }
-
+.slick-arrow {
+  transition: all 0.3s;
+}
+.slick-arrow:hover {
+  transform: scale(1.1);
+}
 .slick-slide {
   display: none;
   float: left;

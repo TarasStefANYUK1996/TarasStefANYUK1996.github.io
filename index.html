@@ -12,7 +12,7 @@
     <title>dijital project</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" id="ttt">
       <header class="header container">
         <!-- Логотип -->
         <div class="header__top left-container">
@@ -30,24 +30,24 @@
         <nav class="nav" id="nav">
           <ul class="list" id="menu">
             <li class="list__item">
-              <a class="list__link" href="#">Главная</a>
+              <a class="list__link" href="#ttt">Главная</a>
             </li>
             <li class="list__item">
-              <a class="list__link" href="#">Галерея</a>
+              <a class="list__link" href="#gallery">Галерея</a>
             </li>
             <li class="list__item">
-              <a class="list__link" href="#">Проекты</a>
+              <a class="list__link" href="#project">Проекты</a>
             </li>
             <li class="list__item">
-              <a class="list__link" href="#">Сертификаты</a>
+              <a class="list__link" href="#mission">Сертификаты</a>
             </li>
             <li class="list__item">
-              <a class="list__link" href="#">Контакты</a>
+              <a class="list__link" href="#footer">Контакты</a>
             </li>
           </ul>
         </nav>
       </header>
-      <section class="gallery container">
+      <section class="gallery container" id="gallery">
         <div class="gallery__text left-container">
           <div class="title-wrap">
             <h1 class="gallery__title">PROJECT</h1>
@@ -75,7 +75,7 @@
           </div>
         </div>
       </section>
-      <section class="about container">
+      <section class="about container" id="about">
         <div class="about__img">
           <div class="img-l">
             <div><img src="img/about/Rectangle 8.png" alt="about-img" /></div>
@@ -99,7 +99,7 @@
           <a href="#" class="about__link">Читать &#129046;</a>
         </div>
       </section>
-      <section class="mission container">
+      <section class="mission container" id="mission">
         <h2 class="section__title">Основные задачи</h2>
         <ul class="mission__list">
           <li class="mission__item">
@@ -120,7 +120,7 @@
           </li>
         </ul>
       </section>
-      <section class="project container">
+      <section class="project container" id="project">
         <h2 class="section__title">Наши проекты</h2>
         <div class="project__list">
           <div class="row">
@@ -176,19 +176,13 @@
           </div>
         </div>
       </section>
-      <section class="comunication container">
+      <section class="comunication container" id="comunication">
         <h2 class="section__title">Связаться с нами</h2>
         <div class="comunication__content">
           <div class="comunication__form">
             <form class="form">
               <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Имя"
-                  required
-                />
+                <input type="text" id="name" name="name" placeholder="Имя" />
               </div>
               <div class="form-group">
                 <input
@@ -214,7 +208,6 @@
                   id="product"
                   name="product"
                   placeholder="Интересующий товар/услуга"
-                  required
                 />
               </div>
               <div class="form-group">
@@ -227,12 +220,7 @@
                 ></textarea>
               </div>
               <div class="checkbox-gr">
-                <input
-                  type="checkbox"
-                  id="confirmation"
-                  name="confirmation"
-                  required
-                />
+                <input type="checkbox" id="confirmation" name="confirmation" />
                 <label for="confirmation"
                   >Отправляя заявку Вы соглашаетесь с политикой
                   конфиденциальности</label
@@ -249,18 +237,18 @@
           </div>
         </div>
       </section>
-      <footer class="footer container">
+      <footer class="footer container" id="footer">
         <div class="footer__logo footer__col">
           <a href="#"> <img src="img/logo.svg" alt="footer__logo" /></a>
         </div>
         <div class="footer__navWr footer__col">
           <h3 class="footer__title">Информация</h3>
           <ul class="footer__nav">
-            <li class="footer__navItem"><a href="#">Главная</a></li>
-            <li class="footer__navItem"><a href="#">Галерея</a></li>
-            <li class="footer__navItem"><a href="#">Проекты</a></li>
-            <li class="footer__navItem"><a href="#">Сертификаты</a></li>
-            <li class="footer__navItem"><a href="#">Контакты</a></li>
+            <li class="footer__navItem"><a href="#ttt">Главная</a></li>
+            <li class="footer__navItem"><a href="#gallery">Галерея</a></li>
+            <li class="footer__navItem"><a href="#project">Проекты</a></li>
+            <li class="footer__navItem"><a href="#mission">Сертификаты</a></li>
+            <li class="footer__navItem"><a href="#footer">Контакты</a></li>
           </ul>
         </div>
         <div class="footer__contact footer__col">
