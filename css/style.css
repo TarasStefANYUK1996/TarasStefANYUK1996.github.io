@@ -4,12 +4,7 @@
 body {
   font-family: "TT Hoves", sans-serif;
 }
-.slick-arrow {
-  transition: all 0.3s;
-}
-.slick-arrow:hover {
-  transform: scale(1.1);
-}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -91,18 +86,25 @@ body {
 }
 .gallery__link {
   position: absolute;
-  /* left: 0; */
+
   bottom: 0;
   color: var(--main-color);
   font-family: "TT Hoves";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 12px; /* 100% */
+  line-height: 12px;
   padding: 29px 50px;
   background-color: #fff;
   transition: ease 0.3s;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.arrow-icon {
+  width: 24px; /* Встановіть розміри svg, які вам потрібні */
+  height: 24px;
+  fill: red; /* Змінюємо колір на червоний; вкажіть потрібний колір */
 }
 .gallery__link:hover,
 .about__link:hover {
@@ -126,6 +128,11 @@ body {
   display: flex;
   gap: 22px;
 }
+.arrow__left img {
+  transform: rotate(180deg); /* Початковий поворот на 180 градусів */
+  transition: transform 0.3s ease;
+}
+
 .arrow__left,
 .arrow__right {
   border: 1px solid #f2f2f2;
@@ -279,7 +286,7 @@ body {
   width: 100%;
   height: 100%;
   color: #fff; /* Колір тексту для інформації проектів */
-  padding: 48px 78px;
+  /* padding: 48px 78px; */
 
   opacity: 0; /* Приховуємо початково інформацію проектів */
   transition: opacity 0.3s ease-in-out; /* Додамо плавний перехід для ефекту появи */
@@ -288,6 +295,7 @@ body {
   justify-content: center;
 }
 .project-link {
+  margin-top: 14px;
   color: #fff;
   font-family: Gothic A1;
   font-size: 12px;
@@ -385,6 +393,16 @@ body {
   display: flex;
   background: #2c2c2c;
   color: #fff;
+  gap: 30px;
+}
+.info-wr {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 78px;
 }
 .footer__navItem a,
 .contact__list a {
@@ -558,9 +576,10 @@ body {
   }
 }
 @media screen and (max-width: 1100px) {
-  /* .wrapper {
-    padding: 0 15px;
-  } */
+  .info-wr {
+    padding: 48px 10px;
+  }
+
   .container {
     padding: 10px;
   }
