@@ -393,7 +393,7 @@ body {
   display: flex;
   background: #2c2c2c;
   color: #fff;
-  gap: 30px;
+  gap: 50px;
 }
 .info-wr {
   position: absolute;
@@ -568,7 +568,7 @@ body {
   }
   .footer {
     flex-direction: column;
-    gap: 50px;
+
     padding: 10px;
   }
   .footer__col {
