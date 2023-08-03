@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="wrapper" id="ttt">
-      <header class="header container">
+      <header class="header js-header container">
         <!-- Логотип -->
         <div class="header__top left-container">
           <div class="header__logo">
@@ -72,7 +72,7 @@
             <span class="total-slides">02</span>
           </div>
         </div>
-        <div class="gallery__img">
+        <div class="gallery__img js-slick-initialization">
           <div>
             <a href="#" class="gallery__link"
               >ВЗГЛЯНУТЬ
@@ -90,14 +90,10 @@
       </section>
       <section class="about container" id="about">
         <div class="about__img">
-          <div class="img-l">
-            <div><img src="img/about/Rectangle 8.png" alt="about-img" /></div>
+          <img class="img1" src="img/about/Rectangle 8.png" alt="about-img" />
 
-            <div><img src="img/about/Rectangle 10.png" alt="about-img" /></div>
-          </div>
-          <div class="img-r">
-            <img src="img/about/Rectangle 9.png" alt="about-img" />
-          </div>
+          <img class="img2" src="img/about/Rectangle 9.png" alt="about-img" />
+          <img class="img3" src="img/about/Rectangle 10.png" alt="about-img" />
         </div>
         <div class="about__text">
           <h1 class="about__title">О компании</h1>
@@ -138,64 +134,54 @@
       <section class="project container" id="project">
         <h2 class="section__title">Наши проекты</h2>
         <div class="project__list">
-          <div class="row">
-            <div class="project-item">
-              <img src="img/project/Rectangle 12.png" alt="Project 5" />
-
-              <div class="project-info">
-                <div class="info-wr">
-                  <p class="project-title">ДОСУГОВЫЙ ЦЕНТР</p>
-                  <a href="#" class="project-link"
-                    >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="project-item">
-              <img src="img/project/image 15.png" alt="Project 1" />
-
-              <div class="project-info">
-                <div class="info-wr">
-                  <p class="project-title">проект 2</p>
-                  <a href="#" class="project-link"
-                    >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
+          <div class="project-item pr2 pr-one">
+            <div class="project-info">
+              <div class="info-wr">
+                <p class="project-title">ДОСУГОВЫЙ ЦЕНТР</p>
+                <a href="#" class="project-link"
+                  >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="project-item">
-              <img src="img/project/image 16.png" alt="Project 2" />
-              <div class="project-info">
-                <div class="info-wr">
-                  <p class="project-title">проект 3</p>
-                  <a href="#" class="project-link"
-                    >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
+          <div class="project-item pr2 pr-two">
+            <div class="project-info">
+              <div class="info-wr">
+                <p class="project-title">проект 2</p>
+                <a href="#" class="project-link"
+                  >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </div>
             </div>
-            <div class="project-item">
-              <img src="img/project/image 17.png" alt="Project 3" />
-              <div class="project-info">
-                <div class="info-wr">
-                  <p class="project-title">проект 4</p>
-                  <a href="#" class="project-link"
-                    >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
+          </div>
+
+          <div class="project-item pr3 pr-three">
+            <div class="project-info">
+              <div class="info-wr">
+                <p class="project-title">проект 3</p>
+                <a href="#" class="project-link"
+                  >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </div>
             </div>
-            <div class="project-item">
-              <img src="img/project/image 18.png" alt="Project 4" />
-              <div class="project-info">
-                <div class="info-wr">
-                  <p class="project-title">проект 5</p>
-                  <a href="#" class="project-link"
-                    >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
+          </div>
+          <div class="project-item pr3 pr-four">
+            <div class="project-info">
+              <div class="info-wr">
+                <p class="project-title">проект 4</p>
+                <a href="#" class="project-link"
+                  >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-item pr3 pr-five">
+            <div class="project-info">
+              <div class="info-wr">
+                <p class="project-title">проект 5</p>
+                <a href="#" class="project-link"
+                  >ПОДРОБНЕЕ <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -209,23 +195,29 @@
               <div class="form-group">
                 <input type="text" id="name" name="name" placeholder="Имя" />
               </div>
-              <div class="form-group">
+              <div class="form-group tel">
                 <input
+                  class="required"
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="Номер телефона*"
                   required
                 />
+                <label class="label label-js" for="phone"
+                  >Номер телефона <sup class="input-required">*</sup></label
+                >
               </div>
               <div class="form-group">
                 <input
+                  class="required"
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="E-mail*"
                   required
                 />
+                <label class="label label-js" for="email"
+                  >E-mail <sup class="input-required">*</sup></label
+                >
               </div>
               <div class="form-group">
                 <input
@@ -237,16 +229,19 @@
               </div>
               <div class="form-group">
                 <textarea
+                  class="required"
                   id="message"
                   name="message"
-                  placeholder="Сообщение*"
                   rows="4"
                   required
                 ></textarea>
+                <label class="label label-js" for="message"
+                  >Сообщение <sup class="input-required">*</sup></label
+                >
               </div>
               <div class="checkbox-gr">
                 <input type="checkbox" id="confirmation" name="confirmation" />
-                <label for="confirmation"
+                <label for="confirmation" class="checkbox__label"
                   >Отправляя заявку Вы соглашаетесь с политикой
                   конфиденциальности</label
                 >

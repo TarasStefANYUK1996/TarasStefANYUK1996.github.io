@@ -22,10 +22,6 @@ body {
   filter: brightness(0.1);
 }
 
-.nav {
-  flex-grow: 1;
-  flex-basis: 0;
-}
 .list {
   display: flex;
   justify-content: space-between;
@@ -86,6 +82,7 @@ body {
 }
 .gallery__link {
   position: absolute;
+  letter-spacing: 2.4px;
 
   bottom: 0;
   color: var(--main-color);
@@ -100,6 +97,7 @@ body {
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 .arrow-icon {
   width: 24px; /* Встановіть розміри svg, які вам потрібні */
@@ -146,28 +144,27 @@ body {
 .last-slide {
   background: #fff;
 }
-.slick-track {
-  /* width: 100% !important; */
-}
+
 .count {
   font-size: 24px;
-  color: var(--main-color);
+  color: #bdbdbd;
   line-height: 24px; /* 100% */
   display: flex;
   gap: 32px;
 }
+.count span {
+  color: #bdbdbd;
+}
 .arrow *:hover {
   cursor: pointer;
 }
-/* .header {
-  position: relative;
-} */
+
 .header {
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
-  margin: 0 auto;
+
   padding-top: 10px;
   background: #fff;
   box-sizing: border-box;
@@ -183,8 +180,24 @@ body {
 }
 .about__img {
   min-width: 50%;
-  display: flex;
-  gap: 20px;
+  min-width: 50%;
+  display: grid;
+  gap: 0 20px;
+  grid-template-areas:
+    "img1 img2"
+    "img3 img2";
+  padding: 40px 0 0;
+}
+.img1 {
+  grid-area: img1;
+}
+.img2 {
+  grid-area: img2;
+  margin: auto;
+}
+.img3 {
+  grid-area: img3;
+  transform: translateY(30px);
 }
 .about__text {
   padding: 30px 0 20px 30px;
@@ -215,6 +228,8 @@ body {
   font-size: 16px;
   font-weight: 300;
   color: #000000;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  line-height: 25px;
 }
 .mission {
   margin-top: 120px;
@@ -249,6 +264,12 @@ body {
   color: #333;
   font-family: "TT Hoves";
   font-size: 22px;
+  line-height: 36px;
+}
+.checkbox__label {
+  color: #333;
+
+  letter-spacing: 0.42px;
 }
 .text-max-w {
   max-width: 279px; /* Встановлюємо максимальну ширину 50% для першого <p> елемента */
@@ -258,10 +279,55 @@ body {
   margin-top: 120px;
 }
 .project__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr;
+  /* grid-template-areas:
+    "pr1 pr2 pr2"
+    "pr3 pr4 pr5"; */
   gap: 30px;
 }
+.pr2 {
+  grid-column: span 3;
+}
+.pr3 {
+  grid-column: span 2;
+}
+.pr-one {
+  background-image: url("../img/project/Rectangle 12.png");
+  background-size: cover;
+}
+.pr-two {
+  background-image: url("../img/project/image 15.png");
+}
+.pr-three {
+  background-image: url("../img/project/image 16.png");
+}
+.pr-four {
+  background-image: url("../img/project/image 17.png");
+}
+.pr-five {
+  background-image: url("../img/project/image 18.png");
+}
+/* .pr1 {
+  grid-area: pr1;
+}
+
+.pr2 {
+  grid-area: pr2;
+}
+
+.pr3 {
+  grid-area: pr3;
+}
+
+.pr4 {
+  grid-area: pr4;
+}
+
+.pr5 {
+  grid-area: pr5;
+} */
 .row {
   display: flex;
   gap: 30px; /* Відступ між проектами */
@@ -270,7 +336,7 @@ body {
 .project-item {
   position: relative;
   width: auto; /* Регулюйте розмір картинок проектів за потребою */
-  max-height: 255px;
+  height: 255px;
 }
 
 .project-item img {
@@ -336,13 +402,40 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-.form-group input,
+.form-group input {
+  line-height: 46px;
+  width: 100%;
+  border: none;
+  background: #f3f3f3;
+  outline: none;
+  padding: 0 20px;
+}
+.form-group .label,
+.form-group textarea {
+  letter-spacing: 0.56px;
+  color: #8d8d8d;
+  line-height: 45px;
+  padding-left: 20px;
+}
 .form-group textarea {
   background: #f3f3f3;
-  border: none;
-  padding: 15px 20px;
   outline: none;
+  border: none;
   width: 100%;
+}
+
+/* Сховати label, коли input не порожній */
+.form-group input:not(:placeholder-shown) + .label {
+  opacity: 0;
+}
+
+/* Показати label, коли input порожній або в фокусі */
+.form-group input:placeholder-shown + .label,
+.form-group input:focus + .label {
+  opacity: 1;
+}
+.input-required {
+  color: red;
 }
 .form-group input:focus {
   border: none;
@@ -351,7 +444,7 @@ body {
   color: #fff;
   background: #333;
   border: 1px solid transparent;
-  padding: 30px 47px;
+  padding: 10px;
   box-sizing: border-box;
   transition: 0.3s;
   max-width: 222px;
@@ -368,6 +461,12 @@ body {
 }
 .form-group {
   width: 100%;
+  position: relative;
+}
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .comunication__img {
   width: 100%;
@@ -447,15 +546,29 @@ body {
 }
 .footer a {
   transition: ease 0.3s;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: TT Hoves;
 }
 .header__logo img {
   /* Тут ми встановлюємо колір патерну */
   fill: blue;
 }
+.city__text {
+  font-family: TT Hoves;
+
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.42px;
+}
 .footer a:hover {
   text-decoration: underline;
 }
+
 @media screen and (max-width: 768px) {
+  .project-item {
+    height: 120px;
+  }
   .lock {
     overflow: hidden;
   }
@@ -494,7 +607,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin: 0 auto;
+
     padding: 10px 15px 0;
   }
   .gallery__text {
